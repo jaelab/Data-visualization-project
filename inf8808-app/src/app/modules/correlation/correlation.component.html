@@ -1,0 +1,42 @@
+<table>
+  <tr>
+    <th rowspan="2">
+      <mat-card id="graph">
+        <mat-card-title id="title">Heatmap of correlation between attributes</mat-card-title>
+        <app-heatmap  *ngIf="hmConfig" [config]="hmConfig" (displayPanel)='showScatterPlot($event)' [events]="hmEventsSubject.asObservable()"></app-heatmap>
+      </mat-card>
+    </th>
+    <td>
+      <mat-card>
+        <mat-card-title>Scatter Plot</mat-card-title>
+        <app-scatterplot *ngIf="spConfig" [config]="spConfig" [events]="eventsSubject.asObservable()"></app-scatterplot>
+      </mat-card>
+  </td>
+  </tr>
+  <tr>
+    <mat-card id="definition">
+      <mat-card-title>What does it mean?</mat-card-title>
+      <mat-card-content>
+        <p>
+          The heatmap, on the left, allows to visualize the correlation and, thus, the link between two attributes. The attributes represented in this visualization are the numerical attributes. Here we have 9 attributes which are numeric: year_of_release, user_count, critic_count, critic_score, user_score, NA_Sales, EU_Sales, JP_Sales, Other_Sales. Hovering over a box would display a tooltip which shows the correlation score, located between -1 and 1. A score of 1 means that the attributes are perfectly correlated and a score of -1 would be the case where the attributes are perfectly negatively correlated . A score of 0 between two attributes would therefore mean that there is no correlation between the two attributes. The best example for a score of 1 would be when we look at the correlation of an attribute with itself (the diagonal).
+          <br> Clicking on any heatmap box would display a scatter plot in the top tile. This scatter plot would have as axis the two desired attributes. The more the points of the graph are in the form of a line, the more they are correlated. By default, the correlation graph is between the attributes year_of_release and critic_count.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

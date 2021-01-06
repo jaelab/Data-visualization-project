@@ -1,0 +1,46 @@
+<mat-tab-group color ="accent" (selectedTabChange)="selectTab($event)">
+  <mat-tab label="Non Sales parameters"></mat-tab>
+  <mat-tab label="Sales parameters"></mat-tab>
+</mat-tab-group>
+
+<div class="row mat-app-background">
+  <div class="label">Sort By:</div>
+
+  <mat-form-field>
+    <mat-select (selectionChange)="configureSelection($event.value)" id='tabSelection' [value]="selections[0].value" name="sort">
+        <mat-option *ngFor="let selection of selections" [value]="selection.value">
+            {{selection.viewValue}}
+        </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<table>
+  <tr>
+    <th>
+      <mat-card id="graph">
+        <app-barchart class="barchart" *ngIf="bcConfig" [config]="bcConfig" [events]="eventsSubject.asObservable()"></app-barchart>
+      </mat-card>
+    </th>
+    <td>
+      <mat-card id="definition">
+        <mat-card-title>What does it mean?</mat-card-title>
+        <mat-card-content>
+          <p>
+            There are two tabs in this visualization: one for obtaining parameters not linked to sales (Non Sale Parameters) and a second linked to sales (Sale Parameters).
+            <br>The first step in this part is to perform a linear regression for each group of parameters. Once the regression is done, it is possible to obtain the weights of each parameter. The values of each of the bars in the bar graph represent these normalized weights between 0 and 1. In other words, the sum of each weight must give 1.
+            <br>There is also the option to organize this graph according to the name of the attributes (ordered alphabetically) and according to the weight of the parameters (ascending order vs. descending order).
+            <br>You can also hover over the bars and a tooltip will show the value of each bar.
+            <br>As we can see, for the non sales parameters, the year of release doesn't affect at all the global sales and the user count is the most influential parameter. This could help us conclude that you could remove the 'Year of release' column from the dataset if you want to perform an in-depth analysis to this dataset. 
+            <br>For the sales parameters, the sales in Japan (JP_Sales) doesn't impact at all the global sales while the sales in North America (NA_Sale) and the sales in Europe (EU_Sales) explain the global sales. Again, it means that a user could remove the Other_sales et the JP_sales' column from the dataset.
+          </p>
+        </mat-card-content>
+      </mat-card>
+  </td>
+  </tr>
+</table>
+
+
+
+

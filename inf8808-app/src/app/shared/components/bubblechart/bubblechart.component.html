@@ -1,0 +1,26 @@
+<app-search *ngIf="config" [config]="config" (zoomBubbleChart)='zoomGame($event)'></app-search>
+
+<mat-card id="container">
+    <mat-card-title id="title">Genres</mat-card-title>
+    <svg id="Legend"></svg>
+    <div id="Selection">
+        <mat-form-field >
+            <mat-label>Radius By Sales Of</mat-label>
+            <mat-select (selectionChange)="onRegionSelection($event.value)" [value]="regions[0].value">
+                <mat-option *ngFor="let region of regions" [value]="region.value">
+                    {{region.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</mat-card>
+<button mat-raised-button
+    data-html="true"
+    matTooltip="This bubble chart represent a data clustering. Each grouping of bubbles represents a cluster. 
+                In other words, a grouping corresponds to games with similar parameters. 
+                For example Klax, is surrounded by old arcade games."
+    matTooltipPosition='before'
+    id="help">
+    <mat-icon>help_outline</mat-icon>
+</button>
+<div id="bubble-chart"></div>

@@ -1,0 +1,44 @@
+/***** General style *****/
+.row {
+    display: flex;
+}
+
+.row > .col {
+    flex: 1;
+}
+
+.label {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    line-height: 24px;
+    flex-basis: 150px;
+}
+
+
+/***** Selec *****/
+#tabSelection {
+  margin-top: 15px;
+}
+
+.label {
+  margin-top: 25px;
+  margin-left: 20px;
+  padding: 5px;
+  font-size: 1.4em;
+}
+
+mat-card{
+  vertical-align: top;
+  display:inline-block;
+}
+
+#graph{
+  margin-top: 20px;
+  margin-left: 20px;
+  float: left;
+}
+
+#definition{
+  text-align: justify;
+  margin-left: 20px;
+}

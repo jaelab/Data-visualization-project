@@ -1,0 +1,34 @@
+<mat-toolbar>
+    <mat-toolbar-row >
+        <button mat-icon-button (click)="sideBarToggler()">
+            <mat-icon>menu</mat-icon>
+        </button>
+  
+        <span>Video Game Sales Analysis</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <mat-nav-list #sidenav>
+            <h2 matSubheader id='topsidebar'>Pages</h2>
+        
+            <a mat-list-item [routerLink]="['/']" routerLinkActive="list-item-active">Main Page</a>
+            <a mat-list-item [routerLink]="['/clusteranalysis']" routerLinkActive="list-item-active">Cluster Analysis</a>
+            <a mat-list-item [routerLink]="['/paramweight']" routerLinkActive="list-item-active">Parameters' Weights</a>
+            <a mat-list-item [routerLink]="['/correlation']" routerLinkActive="list-item-active">Correlation Between Attributes</a>
+        
+            <mat-divider></mat-divider>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<div class="mat-app-background">
+    <mat-divider></mat-divider>
+    <footer>
+        &copy; All rights reserved 2020
+    </footer>
+</div>

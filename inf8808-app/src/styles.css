@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/***** Tooltip *****/
+.d3-tip {
+  line-height: 1;
+  padding: 12px;
+  border-radius: 2px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  z-index: 10000;
+}
+
+.d3-tip:after {
+  display: inline;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin: -1px 0 0 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+  z-index: 10000;
+}
+
+.tooltip {
+  line-height: 1;
+  padding: 12px;
+  border-radius: 2px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  position: relative;
+  z-index: -1;
+}
+
+.autocomplete-suggestions {
+  text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+
+  /* core styles should not be changed */
+  position: absolute; display: none; z-index: 1000000000; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+
+.autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
+.autocomplete-suggestion.selected { background: #f0f0f0; }

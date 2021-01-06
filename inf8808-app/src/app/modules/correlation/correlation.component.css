@@ -1,0 +1,8 @@
+mat-card{
+  vertical-align: top;
+  display:inline-block;
+}
+
+#graph, #definition {
+  margin-bottom: 50px;
+}

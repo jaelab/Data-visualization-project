@@ -1,0 +1,32 @@
+/***** SVG *****/
+:host ::ng-deep svg {
+  background-color: silver;
+}
+
+:host ::ng-deep rect {
+  fill-opacity: 0.8;
+}
+
+:host ::ng-deep rect:hover {
+  fill-opacity: 1;
+}
+
+:host ::ng-deep .axis {
+  shape-rendering: crispEdges
+}
+
+:host ::ng-deep .axis path, .axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+:host ::ng-deep .y.axis path {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+:host ::ng-deep .group text {
+  fill: #fff;
+}
